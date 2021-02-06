@@ -26,6 +26,11 @@ const init = async () => {
 
   server.route({
     method: 'POST',
+    routes: {
+      cors: {
+        origin: ['*'],
+      },
+    },
     path: '/send-mail',
     options: {
       validate: {
