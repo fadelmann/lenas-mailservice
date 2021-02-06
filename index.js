@@ -22,15 +22,15 @@ const init = async () => {
   const server = Hapi.server({
     port: PORT,
     host: HOST,
-  });
-
-  server.route({
-    method: 'POST',
     routes: {
       cors: {
         origin: ['*'],
       },
     },
+  });
+
+  server.route({
+    method: 'POST',
     path: '/send-mail',
     options: {
       validate: {
