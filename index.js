@@ -27,9 +27,13 @@ const init = async () => {
   server.route({
     method: 'POST',
     path: '/send-mail',
-    config: {
-      payload: {
-        parse: true,
+    options: {
+      validate: {
+        payload: Joi.object({
+          name: Joi.string().required(),
+          about: Joi.string().required(),
+          email: Joi.string().email().required(),
+        }),
       },
     },
     handler(request) {
@@ -41,9 +45,9 @@ const init = async () => {
         to: 'fabian.adelmann@gmail.com', // list of receivers
         subject: 'My Website', // Subject line
         html: `
-From: ${name}
-Email: ${email}
-About: ${about}
+From: ${name} \n
+Email: ${email} \n
+About: ${about} \n \n
 
 ${message}
         `,
