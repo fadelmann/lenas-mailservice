@@ -33,6 +33,7 @@ const init = async () => {
           name: Joi.string().required(),
           about: Joi.string().required(),
           email: Joi.string().email().required(),
+          message: Joi.string(),
         }),
       },
     },
@@ -45,9 +46,9 @@ const init = async () => {
         to: 'info@lenafranzisca.com', // list of receivers
         subject: 'My Website', // Subject line
         html: `
-<i>From: ${name}</i><br />
-<i>Email: ${email}</i><br />
-<i>About: ${about}</i> <br /><br /> 
+<i>From: </i><strong>${name}</strong><br />
+<i>Email: </i><strong>${email}</strong><br />
+<i>About: </i><strong>${about}</strong><br /><br /> 
 <hr>
 ${message}
         `,
