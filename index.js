@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
   },
   auth: {
     user: 'info@lenafranzisca.com',
-    pass: 'O$!rJdEX&lJA#gG4',
+    pass: 'S4mmyb0y1995',
   },
 });
 
