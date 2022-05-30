@@ -47,13 +47,13 @@ const init = async () => {
 
       // send mail with defined transport object
       return transporter.sendMail({
-        from: '"Lena Franzsika 👻" <info@lenafranzisca.com>', // sender address
+        from: '"Lena Franzisca Fotografie" <info@lenafranzisca.com>', // sender address
         to: 'info@lenafranzisca.com', // list of receivers
         subject: 'My Website', // Subject line
         html: `
 <i>From: </i><strong>${name}</strong><br />
 <i>Email: </i><strong>${email}</strong><br />
-<i>About: </i><strong>${about}</strong><br /><br /> 
+<i>About: </i><strong>${about}</strong><br /><br />
 <hr>
 ${message}
         `,
